@@ -8,22 +8,39 @@
 </head>
 <body>
     <header>
+                                <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+      <span class="open">&#9776;</span>
+      <span class="close">&times;</span>
+    </label>
         <a href="index.html"><img src="IMG_8425.JPEG"></a>
-                <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">☰</label>
 
         <nav>
             <ul>
                 <li>
-                    <a href="index.html" class="active">Home</a>
-                    <a href="index.html">Services</a>
-                    <a href="contact.html">Contact Me</a>
+                    <a href="index.html" class="active">Home</a> </li>
+                <li><a href="index.html">Services</a> </li>
+                    <li><a href="contact.html">Contact Us</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    WIP
+    <p>
+        We are a student owned and student run company providing affordable and reliable
+        landscaping to homeowners in the Melbourne-Palm Bay area.
+    </p>
+
+<script>
+      const menuToggle = document.getElementById('menu-toggle');
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      menuToggle.checked = false;
+    }
+  });
+
+</script>
 
 </body>
 </html>

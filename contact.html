@@ -8,16 +8,20 @@
 </head>
 <body>
     <header>
+                        <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+      <span class="open">&#9776;</span>
+      <span class="close">&times;</span>
+    </label>
         <a href="index.html"><img src="IMG_8425.JPEG"></a>
-                <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">☰</label>
+
 
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">Home</a>
-                    <a href="index.html">Services</a>
-                    <a href="contact.html" class="active">Contact Me</a>
+                    <a href="index.html">Home</a> </li>
+                <li><a href="index.html">Services</a> </li>
+                    <li><a href="contact.html" class="active">Contact Us</a>
                 </li>
             </ul>
         </nav>
@@ -48,6 +52,15 @@
         this.style.height = 'auto';       // Reset height
         this.style.height = this.scrollHeight + 'px'; // Set new height
     });
+
+      const menuToggle = document.getElementById('menu-toggle');
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      menuToggle.checked = false;
+    }
+  });
+
 </script>
 
 
