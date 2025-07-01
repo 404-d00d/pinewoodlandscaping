@@ -20,8 +20,8 @@ header, footer {
 }
 
 footer {
-margin-top: auto;
-text-align: center;
+    margin-top: auto;
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -68,6 +68,11 @@ li a {
     padding-bottom: 1em;
 }
 
+footer img {
+    width: 20%;
+    height: auto;
+}
+
 header img {
     width: 30%;
     height: auto;
@@ -85,7 +90,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    font-family: Verdana;
+    font-family: Roboto;
 }
 
 header ul {
@@ -105,134 +110,105 @@ a:visited {
 a.active, a.hover{
     text-decoration: underline;
 }
-
-
 @media screen and (max-width: 768px) {
+  /* Header layout */
+  header {
+    position: relative;
+    padding: 1em 0;
+    height: auto;
+    overflow: visible; /* Allow nav to overflow */
+  }
 
-    /* Toggle ☰ and ✖ icons */
-    #menu-toggle:checked + label .open {
-      display: none;
-    }
+  /* Hamburger icon visibility */
+  .menu-icon {
+    display: inline-block;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1em;
+    position: relative;
+    z-index: 1100;
+  }
 
-    #menu-toggle:checked + label .close {
-      display: inline-block;
-    }
+  .menu-icon .open {
+    display: inline;
+  }
 
-    label {
-        display: block;
-    }
+  .menu-icon .close {
+    display: none;
+  }
 
-    input {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 1em;
-    }
+  /* Toggle icons on click */
+  #menu-toggle:checked + label .open {
+    display: none;
+  }
 
-    header img {
-        max-width: 50%;
-        max-height: 50%;
-        height: auto;
-        width: auto;
-        text-align: center;
-        display: block;
-        margin: 0 auto;
-    }
+  #menu-toggle:checked + label .close {
+    display: inline-block;
+  }
 
-    /* show the hamburger menu button */
-    header label {
-        display: block;
-    }
+  /* Hide checkbox */
+  #menu-toggle {
+    display: none;
+  }
 
-    /* when menu button is clicked - show the links */
-    header input[type='checkbox']:checked + nav ul {
-        display: block;
-    }
+  /* Expand input fields */
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+  }
 
-    /* if the menu button is clicked again - hide the links */
-    header input[type='checkbox']:checked + label + nav ul {
-        display: none;
-    }
-
-      .menu-icon {
+  /* Logo behavior */
+  header img {
+    max-width: 50%;
+    height: auto;
     display: block;
+    margin: 0 auto;
   }
 
-  header nav {
-    display: block;
+  /* NAV STYLING */
+  nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #27513d;
+    padding-top: 4em;
+    transition: left 0.3s ease;
+    z-index: 1000;
+
+    /* Hide from layout */
+    pointer-events: none;
+    visibility: hidden;
   }
 
-  header ul {
-    margin-top: 4em;
+  /* When menu is toggled ON */
+  #menu-toggle:checked ~ nav {
+    left: 0;
+    pointer-events: auto;
+    visibility: visible;
   }
 
-      /* Base Reset */
-    {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-bottom: 1em;
+    list-style: none;
+  }
 
-    /* MENU ICON STYLING */
-    .menu-icon {
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 1em;
-      display: inline; /* visible only in mobile */
-      position: relative;
-      z-index: 1100;
-    }
+  nav ul li {
+    margin-bottom: 1.5em;
+  }
 
-    .menu-icon .open {
-      display: inline;
-    }
-
-    .menu-icon .close {
-      display: none;
-    }
-
-    /* Hide the actual checkbox */
-    #menu-toggle {
-      display: none;
-    }
-
-    /* NAV MENU STYLING */
-    nav {
-      position: fixed;
-      top: 0;
-      left: -250px; /* hidden by default */
-      width: 250px;
-      height: 100%;
-      background-color: #27513d;
-      text-color: white;
-      padding-top: 4em;
-      transition: left 0.3s ease;
-      z-index: 1000;
-    }
-
-    /* Nav items as column */
-    nav ul {
-      display: flex;
-      flex-direction: column;
-      padding-left: 0em;
-      padding-bottom: 1em;
-      list-style: none;
-    }
-
-    nav ul li {
-      margin-bottom: 1.5em;
-    }
-
-    nav ul li a {
-      color: white !important;
-      text-decoration: none;
-      font-size: 1.2em;
-    }
-
-    /* When menu is toggled ON */
-    #menu-toggle:checked ~ nav {
-      left: 0;
-    }
+  nav ul li a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
 }
+
 
 @media screen and (min-width: 769px) {
   nav {
