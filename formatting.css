@@ -30,6 +30,7 @@ form {
 form label {
   margin-bottom: 0.5em;
   font-weight: 600;
+  font-size: 1.1em;
 }
 
 form input,
@@ -65,6 +66,12 @@ header, footer {
 footer {
     margin-top: auto;
     text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5em;
 }
 
 nav ul li a:hover {
