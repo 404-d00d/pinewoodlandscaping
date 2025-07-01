@@ -4,15 +4,36 @@
   box-sizing: border-box;
 }
 
-header {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
     display: block;
     background-color: #f4f4f0;
-    width: 100%
+    width: 100%;
     padding: 0;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+footer {
+margin-top: auto;
+text-align: center;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
+}
+
+form label, form input {
+    font-weight: bold;
+}
+
+form input {
+    padding: 0.5em;
 }
 
 form, p {
@@ -49,15 +70,20 @@ li a {
 
 header img {
     width: 30%;
-    height: 30%;
+    height: auto;
     text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+main {
+    flex-grow: 1;
+}
+
 body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
     font-family: Verdana;
 }
@@ -176,7 +202,7 @@ a.active, a.hover{
       left: -250px; /* hidden by default */
       width: 250px;
       height: 100%;
-      background-color: #428D68;
+      background-color: #27513d;
       text-color: white;
       padding-top: 4em;
       transition: left 0.3s ease;
@@ -197,7 +223,7 @@ a.active, a.hover{
     }
 
     nav ul li a {
-      color: white;
+      color: white !important;
       text-decoration: none;
       font-size: 1.2em;
     }

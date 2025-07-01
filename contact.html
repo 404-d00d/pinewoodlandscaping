@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinewood Landscaping</title>
 </head>
+<script src="scripting.js"></script>
 <body>
     <header>
                         <input type="checkbox" id="menu-toggle">
@@ -27,6 +28,7 @@
         </nav>
     </header>
 
+    <main>
     <form action="https://fabform.io/f/Tjjzalg" method="post">
         <!-- Replace "YOUR_FORM_ENDPOINT" with your actual FabForm form endpoint -->
 
@@ -44,24 +46,11 @@
 
         <input type="submit" value="Submit">
     </form>
+    </main>
 
-<script>
-    const textarea = document.getElementById('message');
-
-    textarea.addEventListener('input', function () {
-        this.style.height = 'auto';       // Reset height
-        this.style.height = this.scrollHeight + 'px'; // Set new height
-    });
-
-      const menuToggle = document.getElementById('menu-toggle');
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      menuToggle.checked = false;
-    }
-  });
-
-</script>
+    <footer>
+        <p>WIP</p>
+    </footer>
 
 
 </body>
