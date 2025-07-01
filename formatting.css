@@ -4,6 +4,49 @@
   box-sizing: border-box;
 }
 
+form button,
+form input[type="submit"] {
+  padding: 0.75em 1.5em;
+  background-color: #27513d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background-color: #1f3f30;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+form label {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  font-size: 1em;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #428D68;
+  box-shadow: 0 0 0 2px rgba(66, 141, 104, 0.2);
+}
+
+
 html, body {
     height: 100%;
     margin: 0;
@@ -36,7 +79,11 @@ form input {
     padding: 0.5em;
 }
 
-form, p {
+main h2 {
+    text-align: center;
+}
+
+form, p, h2{
     margin-left: 2em;
     margin-right: 2em;
     margin-top: 2em;
