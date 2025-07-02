@@ -33,6 +33,24 @@ form label {
   font-size: 1.1em;
 }
 
+#prev, #next {
+  font-size: 2rem;            /* Makes the arrow icon larger */
+  padding: 0.25em 0.5em;         /* Adds spacing inside the button */
+  background-color: #27513d;  /* Button background */
+  color: white;               /* Arrow color */
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 5px;
+}
+
+#prev:hover, #next:hover {
+  background-color: #1d3c2b;  /* Darker on hover */
+  transform: scale(1.1);      /* Slight zoom effect */
+}
+
 #prev-work {
     display: flex;
     justify-content: center;
@@ -41,7 +59,7 @@ form label {
 }
 
 #prev-work img {
-width: 30%;
+width: 50%;
     height: auto;
 }
 
@@ -102,7 +120,7 @@ main h2 {
     text-align: center;
 }
 
-form, p, h2{
+form, p, h2, h3 {
     margin-left: 2em;
     margin-right: 2em;
     margin-top: 2em;
