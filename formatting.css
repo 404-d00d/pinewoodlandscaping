@@ -33,6 +33,18 @@ form label {
   font-size: 1.1em;
 }
 
+#prev-work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+#prev-work img {
+width: 30%;
+    height: auto;
+}
+
 form input,
 form textarea {
   border: 1px solid #ccc;
