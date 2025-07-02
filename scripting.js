@@ -1,18 +1,20 @@
-const textarea = document.getElementById('message');
+document.addEventListener("DOMContentLoaded", () => {
+  const textarea = document.getElementById('message');
+  if (textarea) {
+    textarea.addEventListener('input', function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    });
+  }
 
-textarea.addEventListener('input', function () {
-    this.style.height = 'auto';       // Reset height
-    this.style.height = this.scrollHeight + 'px'; // Set new height
-});
-
-
-const menuToggle = document.getElementById('menu-toggle');
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      menuToggle.checked = false;
-    }
-});
+  const menuToggle = document.getElementById('menu-toggle');
+  if (menuToggle) {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        menuToggle.checked = false;
+      }
+    });
+  }
 
   const images = [
     "IMG_0167.jpg",
@@ -30,15 +32,18 @@ window.addEventListener('resize', () => {
   const prevButton = document.getElementById("prev");
 
   function updateImage() {
-    lawnImage.src = images[index];
+    if (lawnImage) lawnImage.src = images[index];
   }
 
-  nextButton.addEventListener("click", () => {
-    index = (index + 1) % images.length;
-    updateImage();
-  });
+  if (nextButton && prevButton && lawnImage) {
+    nextButton.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      updateImage();
+    });
 
-  prevButton.addEventListener("click", () => {
-    index = (index - 1 + images.length) % images.length;
-    updateImage();
-  });
+    prevButton.addEventListener("click", () => {
+      index = (index - 1 + images.length) % images.length;
+      updateImage();
+    });
+  }
+});
