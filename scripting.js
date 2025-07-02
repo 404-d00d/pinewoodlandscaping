@@ -31,9 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextButton = document.getElementById("next");
   const prevButton = document.getElementById("prev");
 
-  function updateImage() {
-    if (lawnImage) lawnImage.src = images[index];
-  }
+function updateImage() {
+  if (!lawnImage) return;
+
+  // Step 1: Fade out
+  lawnImage.style.opacity = 0;
+  lawnImage.style.transform = "scale(0.95)";
+
+  // Step 2: After fade out, change the image and fade in
+  setTimeout(() => {
+    lawnImage.src = images[index];
+
+    // Step 3: Fade in
+    lawnImage.style.opacity = 1;
+    lawnImage.style.transform = "scale(1)";
+  }, 200); // this matches your CSS transition duration
+}
+
 
   if (nextButton && prevButton && lawnImage) {
     nextButton.addEventListener("click", () => {
