@@ -25,7 +25,19 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  background-color: #e0e0e0;
+  padding: 4em 2em;
+  max-width: 100%;
+  width: 40%;
 }
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+}
+
+
+
 
 form label {
   margin-bottom: 0.5em;
@@ -231,6 +243,11 @@ nav ul li a.active::after {
 
 
 @media screen and (max-width: 768px) {
+
+   form {
+      width: 100%
+   }
+
   /* Header layout */
   header {
     position: relative;
