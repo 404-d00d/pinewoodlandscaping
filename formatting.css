@@ -63,6 +63,12 @@ form label {
   transform: scale(1.1);      /* Slight zoom effect */
 }
 
+#prev:focus,
+#next:focus {
+  outline: none;
+  scroll-margin-top: 0px;
+}
+
 #prev-work {
     display: flex;
     justify-content: center;
@@ -70,13 +76,18 @@ form label {
     margin-bottom: 2em;
 }
 
-#prev-work img {
-  width: 50%;
+.carousel-image {
+  max-width: 40%;
   height: auto;
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  display: block;
+  margin: 0 auto;
 }
+
+.carousel-image.half {
+  width: 20%;
+  margin: 0 0.5em;
+}
+
 
 
 form input,
@@ -101,8 +112,10 @@ html, body {
 }
 
 header, footer {
-    display: block;
+    display: flex;
     background-color: #f4f4f0;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 0;
     padding-bottom: 1em;
@@ -165,7 +178,7 @@ li a {
 }
 
 footer img {
-    width: 20%;
+    max-width: 20%;
     height: auto;
 }
 
@@ -174,11 +187,14 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: auto;
-  padding: 2em 2em;
+  padding: 0em 2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header a img {
-  width: 20%; /* or whatever size fits your design */
+  width: 15%;
   height: auto;
 }
 
@@ -241,8 +257,32 @@ nav ul li a.active::after {
   background-color: black;
 }
 
+.carousel-image {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.carousel-image.loaded {
+  opacity: 1;
+}
+
+.carousel-image.fade-out {
+  opacity: 0;
+}
 
 @media screen and (max-width: 768px) {
+
+    .carousel-image {
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .carousel-image.half {
+      max-width: 40%;
+      margin: 0 0.5em;
+    }
 
    form {
       width: 100%
@@ -250,8 +290,10 @@ nav ul li a.active::after {
 
   /* Header layout */
   header {
-    position: relative;
-    padding: 1em 0;
+      position: sticky;
+        top: 0;
+        z-index: 1000;
+    padding: 0em 0em;
     height: auto;
     overflow: visible; /* Allow nav to overflow */
   }
